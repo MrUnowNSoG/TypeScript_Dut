@@ -1,4 +1,8 @@
 //Числа-----------------------------------------------------------------------------
+/**
+ * @param {string} promptText
+ * @returns {number}
+ */
 function getNumberInput(promptText) {
 
     let input;
@@ -12,12 +16,14 @@ function getNumberInput(promptText) {
         }
 
     } while (!isNumber(input));
-    
 
     return parseFloat(input);
 }
 
-
+/**
+ * @param {any} value
+ * @returns {boolean}
+ */
 function isNumber(value) {
 
     let number = parseFloat(value);
@@ -28,7 +34,6 @@ function isNumber(value) {
         canParse = true;
 
     } else {
-
         canParse = false;
     }
 
@@ -39,9 +44,12 @@ function isNumber(value) {
 
 
 //Операції--------------------------------------------------------------------------
-
 var allOperation = ["+", "-", "*", "/"];
 
+/**
+ * @param {string} promptText
+ * @returns {string}
+ */
 function getOperation(promptText) {
 
     let operation;
@@ -54,7 +62,7 @@ function getOperation(promptText) {
 
             if(operation.toString() == allOperation[i].toString()) {
                 operation = allOperation[i];
-                hadOperation = true
+                hadOperation = true;
                 break;
             } 
         }
@@ -70,6 +78,12 @@ function getOperation(promptText) {
 
 
 //Калькулятор-----------------------------------------------------------------------
+/**
+ * @param {number} num1
+ * @param {number} num2
+ * @param {string} operation
+ * @returns {number | null}
+ */
 function calculate(num1, num2, operation) {
     let result;
     switch (operation) {
@@ -98,7 +112,6 @@ function calculate(num1, num2, operation) {
             alert("Невідома операція.");
             return null;
     }
-
 
     return result;
 }
